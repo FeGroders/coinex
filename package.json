@@ -1,0 +1,22 @@
+{
+  "name": "coinex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FeGroders/coinex.git"
+  },
+  "author": "Fernando Groders",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FeGroders/coinex/issues"
+  },
+  "homepage": "https://github.com/FeGroders/coinex#readme",
+  "dependencies": {
+    "axios": "^0.25.0"
+  }
+}

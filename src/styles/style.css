@@ -1,0 +1,111 @@
+body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  width: 350px;
+  background-color: #ffffff;
+  height: 180px;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+#logo {
+  margin: 10px;
+  color: #f5bc00;
+  text-shadow: 0px 1px 0px #ffffff;
+}
+
+input {
+  padding: 5px;
+  font-size: 16px;
+  border-width: 1px;
+  border-color: #cccccc;
+  background-color: #ffffff;
+  color: #000000;
+  border-style: solid;
+  border-radius: 0px;
+  box-shadow: 0px 0px 5px rgba(66, 66, 66, 0.19);
+  text-align: end;
+}
+input:focus {
+  outline: none;
+}
+
+select {
+  width: 79px;
+  padding: 5px;
+  font-size: 16px;
+  border-width: 1px;
+  border-color: #cccccc;
+  background-color: #ffffff;
+  color: #000000;
+  border-style: solid;
+  border-radius: 0px;
+  box-shadow: 0px 0px 5px rgba(66, 66, 66, 0.19);
+}
+
+#btn-convert {
+  border: none;
+  background-color: none;
+  background: none;
+  box-shadow: none;
+  margin: 10px;
+  padding: 0;
+}
+#btn-convert img {
+  height: 35px;
+  width: 35px;
+}
+@keyframes loading {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+#btn-convert img:hover {
+  animation: loading 3s linear infinite;
+}
+
+button {
+  margin: 3px;
+  border-radius: 6px;
+  border: 1px solid #dcdcdc;
+  display: inline-block;
+  cursor: pointer;
+  color: #000000;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px 5px;
+  text-decoration: none;
+  background: linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+  background-color: #ffffff;
+  text-shadow: 0px 1px 0px #ffffff;
+  box-shadow: inset 0px 1px 0px 0px #ffffff;
+  background: linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+  background-color: #ffffff;
+}
+button p {
+  width: 90px;
+  margin: 0;
+}
+button:active {
+  position: relative;
+  top: 1px;
+}
+button:hover {
+  background: linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+  background-color: #f6f6f6;
+}
+
+/*# sourceMappingURL=style.css.map */
+
+/*# sourceMappingURL=style.css.map */
