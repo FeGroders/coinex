@@ -4,7 +4,7 @@ var defaultFinalCoin = 'bitcoin';
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    var btnConvert = document.querySelector('#btn-convert');
+    // var btnConvert = document.querySelector('#btn-convert');
     var iptValue = document.querySelector('#value');
     var slctCoinInicial = document.querySelector('#coin-initial');
     var slctCoinFinal = document.querySelector('#coin-final');
@@ -32,9 +32,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    btnConvert.addEventListener('click', function() {
-        transformValue();
-    });
+    // btnConvert.addEventListener('click', function() {
+    //     transformValue();
+    // });
 
     iptValue.addEventListener('change', function() {
         transformValue(); 
