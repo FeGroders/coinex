@@ -10,7 +10,7 @@ export function convertValue(valueToConvert, idCoinInitial, idCoinFinal){
 
       getRateUSD(idCoinFinal).then(function(rate) {
         finalRate = rate;
-        resolve(((valueToConvert / initialRate) * finalRate).toFixed(2));
+        resolve(((valueToConvert * initialRate) / finalRate).toFixed(2));
       });
     });    
   });

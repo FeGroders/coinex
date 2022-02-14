@@ -1,6 +1,6 @@
 import { convertValue, getCoins } from './modules/coin.js';
-var defaultInitialCoin = 'united-states-dollar';
-var defaultFinalCoin = 'bitcoin';
+var defaultInitialCoin = 'bitcoin';
+var defaultFinalCoin = 'united-states-dollar';
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
     var slctCoinFinal = document.querySelector('#coin-final');
     
     function transformValue(){
-        console.log(slctCoinInicial.value + ' -> ' + slctCoinFinal.value);
         if (document.querySelector('#value').value > 0){
             convertValue(iptValue.value, slctCoinInicial.value, slctCoinFinal.value).then(function(value) {
                 document.querySelector('#result').value = value;
@@ -19,22 +18,21 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function fillSelect(){
-        getCoins().then(function(coins) {
-            coins.forEach(function(coin) {
-                let option = document.createElement('option');
-                option.value = coin.id;
-                option.innerHTML = coin.symbol;
-                slctCoinInicial.appendChild(option);
-                slctCoinFinal.appendChild(option.cloneNode(true));
+        return new Promise((resolve) => {
+            getCoins().then(function(coins) {
+                coins.forEach(function(coin) {
+                    let option = document.createElement('option');
+                    option.value = coin.id;
+                    option.innerHTML = coin.symbol;
+                    slctCoinInicial.appendChild(option);
+                    slctCoinFinal.appendChild(option.cloneNode(true));
+                });
+                slctCoinInicial.value = defaultInitialCoin;
+                slctCoinFinal.value = defaultFinalCoin;
+                resolve();
             });
-            slctCoinInicial.value = defaultInitialCoin;
-            slctCoinFinal.value = defaultFinalCoin;
         });
     }
-
-    // btnConvert.addEventListener('click', function() {
-    //     transformValue();
-    // });
 
     iptValue.addEventListener('change', function() {
         transformValue(); 
@@ -45,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     //Fill the selects with the coins
-    fillSelect();   
-    
-    transformValue();
+    fillSelect().then(function(){
+        transformValue();
+    });   
 });
